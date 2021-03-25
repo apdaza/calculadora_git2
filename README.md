@@ -1,6 +1,6 @@
 # Calculadora ejemplo git
 
-Integrantes:
+__Integrantes__:
  - Alejandro Daza 
 
 Ejercicio de calculadora básica con orientación a objetos para el uso de git. 
