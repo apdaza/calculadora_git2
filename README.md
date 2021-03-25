@@ -6,3 +6,7 @@ __Integrantes__:
 Ejercicio de calculadora básica con orientación a objetos para el uso de git. 
 
 Ejercicio realizado con python, flsk, html y css
+
+__Dependencias__:
+
+- <code> pip install flask </code>
