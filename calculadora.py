@@ -16,6 +16,9 @@ class Calculadora:
 
     def multiplicar(self):
         """operación que multiplica los valores seteados en la calculadora"""
-        pass
+        self.resultado = self.valor_1 * self.valor_2
 
-    
+    def dividir(self):
+        """operación que divide los valores seteados en la calculadora"""
+        self.resultado = self.valor_1 / self.valor_2
+
