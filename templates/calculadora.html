@@ -10,7 +10,10 @@
             }
 
             function operador(valor){
-                document.getElementById("btn_suma").disable = true;
+                operadores = document.getElementsByName("op");
+                operadores.forEach(element => {
+                    element['disabled']=true;
+                });
                 
                 texto = document.getElementById("resultado").value;
                 texto += " " + valor + " ";
@@ -46,40 +49,40 @@
         </script>
     </head>
     <body>
-        <form id="calculadora" action="" method="POST">
-            <table>
-                <tr>
-                    <td colspan="4">
-                        <input type="text" name="resultado" id="resultado" value="{{ resultado }}">
-                    </td>
-                </tr>
-                <tr>
-                    <td><button onclick="boton(7); return false;">7</button></td>
-                    <td><button onclick="boton(8); return false;">8</button></td>
-                    <td><button onclick="boton(9); return false;">9</button></td>
-                    <td><button id="btn_suma" onclick="operador('+'); return false;">+</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="boton(6); return false;">6</button></td>
-                    <td><button onclick="boton(5); return false;">5</button></td>
-                    <td><button onclick="boton(4); return false;">4</button></td>
-                    <td><button onclick="operador('-'); return false;">-</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="boton(1); return false;">1</button></td>
-                    <td><button onclick="boton(2); return false;">2</button></td>
-                    <td><button onclick="boton(3); return false;">3</button></td>
-                    <td><button onclick="operador('*'); return false;">*</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="boton(0); return false;">0</button></td>
-                    <td><button onclick="operar();">=</button></td>
-                    <td><button onclick="borrar(); return false;">C</button></td>
-                    <td><button onclick="operador('/'); return false;">/</button></td>
-                </tr>
-            </table>
-            <input type="hidden" name="operacion" id="operacion" value="">
-        </form>
+        <form id="calculadora" action="" method="POST"></form>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="resultado" id="resultado" value="{{ resultado }}">
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="boton(7); return false;">7</button></td>
+                <td><button onclick="boton(8); return false;">8</button></td>
+                <td><button onclick="boton(9); return false;">9</button></td>
+                <td><button name="op" onclick="operador('+'); return false;">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="boton(6); return false;">6</button></td>
+                <td><button onclick="boton(5); return false;">5</button></td>
+                <td><button onclick="boton(4); return false;">4</button></td>
+                <td><button name="op" onclick="operador('-'); return false;">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="boton(1); return false;">1</button></td>
+                <td><button onclick="boton(2); return false;">2</button></td>
+                <td><button onclick="boton(3); return false;">3</button></td>
+                <td><button name="op" onclick="operador('*'); return false;">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="boton(0); return false;">0</button></td>
+                <td><button onclick="operar();">=</button></td>
+                <td><button onclick="borrar(); return false;">C</button></td>
+                <td><button name="op" onclick="operador('/'); return false;">/</button></td>
+            </tr>
+        </table>
+        <input type="hidden" name="operacion" id="operacion" value="">
+    
         
     </body>
 </html>
