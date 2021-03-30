@@ -7,7 +7,6 @@ app = Flask(__name__)
 def hola():
     return render_template('calculadora.html')
 
-@app.route('/suma/<int:valor_1>/<int:valor_2>')
 def suma(valor_1, valor_2):
     c = Calculadora()
     c.valor_1 = valor_1
@@ -15,7 +14,6 @@ def suma(valor_1, valor_2):
     c.sumar()
     return str(c.resultado)
 
-@app.route('/resta/<int:valor_1>/<int:valor_2>')
 def resta(valor_1, valor_2):
     c = Calculadora()
     c.valor_1 = valor_1
@@ -23,7 +21,6 @@ def resta(valor_1, valor_2):
     c.restar()
     return str(c.resultado)
 
-@app.route('/multiplicacion/<int:valor_1>/<int:valor_2>')
 def multiplicacion(valor_1, valor_2):
     c = Calculadora()
     c.valor_1 = valor_1
